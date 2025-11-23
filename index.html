@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>maleesha Gimhan</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --glass: rgba(255,255,255,0.04);
+      --accent:#7c3aed;
+      --radius:14px;
+      --max-w:1100px;
+      color-scheme:dark;
+      color:#ffffff;
+      font-family:'Inter',sans-serif;
+    }
+
+    /* Make all text white (only text color changes were requested) */
+    body {margin:0; background: linear-gradient(180deg,#071024 0%, #0b1220 100%); padding:20px; display:flex; justify-content:center; opacity:0; transition:1s; color: #ffffff;}
+    body.loaded {opacity:1;}
+
+    .container-custom{width:100%; max-width:var(--max-w); background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); border-radius:20px; padding:28px; backdrop-filter:blur(6px); box-shadow:0 6px 30px rgb(138, 42, 42);}
+
+    /* Header */
+    .logo{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#3b82f6); display:flex;align-items:center;justify-content:center; font-weight:800;font-size:20px;color:white;}
+
+    /* Hero & Cards */
+    .hero, .card{background:var(--card); border-radius:14px; padding:20px; box-shadow:inset 0 1px rgba(243, 240, 240, 0.04);}
+    .avatar{width:100%;height:220px;border-radius:12px; background:url('https://picsum.photos/400/300') center/cover no-repeat;}
+    .project-thumb{width:88px;height:64px;border-radius:8px;background:url('https://picsum.photos/200/150') center/cover no-repeat;}
+
+    /* Fade-up on scroll */
+    .fade-up{opacity:0; transform:translateY(40px); transition:0.6s;}
+    .fade-up.show{opacity:1; transform:translateY(0);}
+
+    /* Floating card hover */
+    .float-card{transition:0.3s; transform:translateY(0);}
+    .float-card:hover{transform:translateY(-8px) rotateZ(1deg); box-shadow:0 15px 30px rgba(124,58,237,0.5);}
+
+    /* Skills badges */
+    .badge-skill{background:var(--glass); color:rgb(255, 255, 255); font-weight:600; margin:3px;}
+
+    /* Score animations */
+    .score-number{font-weight:800; color:white;}
+    .progress-bar{background:var(--accent);}
+    .circle-progress{width:80px; height:80px; border-radius:50%; border:4px solid var(--accent); display:flex; align-items:center; justify-content:center; color:white; font-weight:700; margin:5px;}
+
+    /* Project cards hover */
+    .project-card{transition:0.4s; border-radius:12px; overflow:hidden; background:linear-gradient(135deg,#2b035f,#0f1724); position:relative;}
+    .project-card:hover{transform:translateY(-5px) scale(1.02); box-shadow:0 10px 25px rgba(124,58,237,0.6);}
+    .project-card .btn-project{position:absolute; bottom:10px; right:10px; background:var(--accent); color:#ffffff; border:none; padding:6px 12px; border-radius:6px; opacity:0; transition:0.3s;}
+    .project-card:hover .btn-project{opacity:1; transform:translateY(-2px);}
+
+    /* Typewriter effect */
+    #hero-text, #hero-para {
+      display:inline-block;
+      overflow:hidden;
+      white-space:nowrap;
+      min-width: fit-content; 
+      border-right: 2px solid var(--accent);
+    }
+    @keyframes typing {from { width: 0 } to { width: 100% }}
+    @keyframes blink {0%,50%,100% {border-color: var(--accent)} 25%,75% {border-color:transparent}}
+
+    /* Contact form label text color */
+    #contact label { color:white !important; }
+    #contact textarea, #contact button, #contact h5 { color:white !important; }
+
+    /* Responsive */
+    @media(max-width:980px){.row-cols-lg-2{grid-template-columns:1fr !important;}}
+  </style>
+</head>
+
+<body>
+  <div class="container-custom fade-up">
+
+    <!-- Header without navigation -->
+    <header class="d-flex justify-content-start align-items-center mb-4 fade-up">
+      <div class="d-flex align-items-center gap-3">
+        <div class="logo">YN</div>
+        <div>
+          <div style="font-weight:800">Gimhan</div>
+          <div style="font-size:13px"> Designer • Maker</div>
+        </div>
+      </div>
+    </header>
+
+    <div class="row g-4">
+
+      <!-- LEFT Column -->
+      <div class="col-lg-8">
+
+        <!-- Hero -->
+        <section class="hero float-card fade-up" id="about">
+          <h1 id="hero-text">Hi — I'm Maleesha Gimhan</h1>
+          <p class="text-white" id="hero-para">assionate graphic designer translating concepts into visually compelling designs.<br> 
+            Motivated by the belief that effective design is a powerful communicator,<br> 
+            I bring a blend of creativity and technical skill to every project. <br>
+            Excited to contribute innovative solutions that not only meet but exceed expectations,<br>
+             I am dedicated to making a lasting visual impact</p>
+
+          <!-- Skills badges -->
+          <div class="d-flex flex-wrap mt-2">
+            <span class="badge badge-skill px-3 py-2">Grapic Design</span>
+            <span class="badge badge-skill px-3 py-2">Ux/Ui Design</span>
+            <span class="badge badge-skill px-3 py-2">Vector Portrait</span>
+            <span class="badge badge-skill px-3 py-2">python</span>
+            <span class="badge badge-skill px-3 py-2">Music</span>
+          </div>
+
+          <!-- Score Animations -->
+          <h2 class="mt-4">Skills Score</h2>
+          <div class="d-flex flex-wrap gap-3 mb-3">
+            <div>Grapic design: <span class="score-number" data-target="65">0</span>%</div>
+            <div>Ux/UI Design : <span class="score-number" data-target="50">0</span>%</div>
+            <div>Vector Art: <span class="score-number" data-target="70">0</span>%</div>
+          </div>
+
+          <!-- Progress Bars -->
+          <div class="mb-3">
+            <div class="mb-1 text-white">Grapic design</div>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width:0%" data-target="95"></div>
+            </div>
+            <div class="mb-1 text-white mt-2">UX?UI Design</div>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width:0%" data-target="90"></div>
+            </div>
+            <div class="mb-1 text-white mt-2">Vector Art</div>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width:0%" data-target="85"></div>
+            </div>
+          </div>
+
+          <!-- Circle Scores -->
+          <div class="d-flex">
+            <div class="circle-progress" data-target="65">0%</div>
+            <div class="circle-progress" data-target="50">0%</div>
+            <div class="circle-progress" data-target="70">0%</div>
+          </div>
+        </section>
+
+        <!-- Projects Section -->
+        <h2 class="mt-4">Selected Projects</h2>
+        <div class="d-flex flex-column gap-3" id="projects">
+          <a class="d-flex gap-3 align-items-center text-decoration-none project-card float-card fade-up" href="#">
+            <div class="project-thumb"></div>
+            <div>
+              <h5 class="m-0">Project One</h5>
+              <small style="color:white">Grapic Design</small>
+            </div>
+            <button class="btn-project" onclick="window.open('https://www.behance.net/gallery/189184935/graphic-design-portfolio','_blank')">View</button>
+          </a>
+          
+           <a class="d-flex gap-3 align-items-center text-decoration-none project-card float-card fade-up" href="#">
+            <div class="project-thumb"></div>
+            <div>
+              <h5 class="m-0">Project Two</h5>
+              <small style="color:white">UX/UI Design</small>
+            </div>
+            <button class="btn-project" onclick="window.open('https://www.behance.net/gallery/185314239/Mobile-app-UXUI-design','_blank')">View</button>
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT Column -->
+      <aside class="col-lg-4 fade-up">
+
+        <!-- Profile Card -->
+        <div class="card float-card">
+          <div class="avatar"></div>
+          <div class="mt-3">
+            <div style="font-weight:800;color:white">Gimhan</div>
+            <div style="font-size:13px;color:white">Sri Lanka • Open to work</div>
+          </div>
+         <div class="mt-3 d-flex flex-column gap-2">
+  <!-- Email opens mail client -->
+  <a class="btn btn-primary" href="mailto:you@example.com">Email me</a>
+
+  <!-- LinkedIn opens in new tab -->
+  <a class="btn btn-outline-light" 
+     href="https://www.linkedin.com/in/maleesha-gimhan-a31819263/" 
+     target="_blank" 
+     rel="noopener noreferrer">LinkedIn</a>
+
+  <!-- GitHub opens in new tab -->
+  <a class="btn btn-outline-light" 
+     href="https://github.com/gimhanm" 
+     target="_blank" 
+     rel="noopener noreferrer">GitHub</a>
+</div>
+
+        </div>
+
+        <!-- Contact Form -->
+        <div class="card float-card mt-3">
+          <h5 style="color:white">Quick Contact</h5>
+          <form id="contact" onsubmit="contactSubmit(event)">
+            <label class="small">Message</label>
+            <textarea id="msg" class="form-control bg-dark text-white mt-1" rows="4"></textarea>
+            <button class="btn btn-primary mt-2" type="submit">Send</button>
+          </form>
+        </div>
+
+        <footer class="small mt-3 text-white">
+          © <span id="year"></span> Gimhan — Built with ❤️
+        </footer>
+      </aside>
+    </div>
+  </div>
+
+  <script>
+    // Fade-in on load
+    window.onload = () => { document.body.classList.add("loaded"); }
+
+    // Scroll fade-up
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting) e.target.classList.add("show");
+      });
+    }, {threshold:0.2});
+    document.querySelectorAll(".fade-up").forEach(el=>observer.observe(el));
+
+    // Contact form
+    document.getElementById("year").textContent = new Date().getFullYear();
+    function contactSubmit(e){
+      e.preventDefault();
+      const msg = document.getElementById("msg").value.trim();
+      if(!msg){ alert("Please write a short message."); return; }
+      alert("Thanks! Your message was received (demo).");
+      document.getElementById("msg").value="";
+    }
+
+    // Number Counter Animation
+    const counters = document.querySelectorAll('.score-number');
+    counters.forEach(counter=>{
+      const updateCount = ()=>{
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = Math.ceil(target / 50);
+        if(count < target){
+          counter.innerText = count + increment;
+          setTimeout(updateCount,30);
+        } else counter.innerText = target;
+      }
+      updateCount();
+    });
+
+    // Progress Bars Animation
+    const progressBars = document.querySelectorAll('.progress-bar');
+    progressBars.forEach(bar=>{
+      const target = bar.getAttribute('data-target');
+      setTimeout(()=>{ bar.style.width = target + '%'; }, 500);
+    });
+
+    // Circle Progress Animation
+    const circles = document.querySelectorAll('.circle-progress');
+    circles.forEach(circle=>{
+      const target = +circle.getAttribute('data-target');
+      let count = 0;
+      const interval = setInterval(()=>{
+        if(count >= target){ clearInterval(interval); }
+        else { count++; circle.innerText = count + '%'; }
+      },15);
+    });
+
+    // Typewriter effect (fixed duplicate calls and stray call)
+    function typeWriter(elementId, text, speed = 100) {
+      const el = document.getElementById(elementId);
+      let i = 0;
+      el.innerHTML = "";
+
+      function typing() {
+        if (i < text.length) {
+          const char = text.charAt(i) === " " ? "&nbsp;" : text.charAt(i);
+          el.innerHTML += char;
+          i++;
+          setTimeout(typing, speed);
+        }
+      }
+      typing();
+    }
+
+    typeWriter("hero-text", "Hi — I'm Maleesha Gimhan", 90);
+   
+  </script>
+</body>
+</html>
